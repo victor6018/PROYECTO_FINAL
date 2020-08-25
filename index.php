@@ -1,3 +1,7 @@
+<?php
+session_start();
+require("principal/database.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
