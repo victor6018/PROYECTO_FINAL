@@ -4,7 +4,12 @@
     $db = 'diariodb';
     $un = 'root';
     $pw = '';
-
-    $conexion = new mysqli($hn, $un, $pw, $db);
-    if ($conexion->connect_error) die ("Fatal error");
+    
+    $basedatos = "gestion_academica1";
+	$conexion = mysqli_connect($hn, $un, $pw, $db);	
+	if(mysqli_connect_errno()){
+		echo "no se conecto al servidor";		
+	}
+	mysqli_set_charset($conexion,"UTF8");
+	mysqli_select_db($conexion,$basedatos) or die ("no exisite base de datos");
 ?>
