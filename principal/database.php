@@ -4,8 +4,8 @@
     $db = 'diariodb';
     $un = 'root';
     $pw = '';
-    
-    $basedatos = "gestion_academica1";
+
+    $basedatos = "gestion_academica";
 	$conexion = mysqli_connect($hn, $un, $pw, $db);	
 	if(mysqli_connect_errno()){
 		echo "no se conecto al servidor";		
