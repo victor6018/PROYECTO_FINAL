@@ -22,7 +22,7 @@ require("database.php");
             header("location: estudiante/index.php");
         }else{
             
-            header("location: estudiante/index.php");
+            header("location: #");
         }
     }
    }

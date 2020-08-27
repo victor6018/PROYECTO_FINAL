@@ -3,6 +3,7 @@ html, body
 {
     margin: 0;
     padding: 0;
+    
 }
 
 body
@@ -13,13 +14,15 @@ body
     letter-spacing: 0.03em;
     line-height: 1.6;
     font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(45deg, #086b5e, #ad4040);
+    background-attachment: fixed;
 }
 
 .title
 {
     text-align: center;
     font-size: 40px;
-    color: #6a6a6a;
+    color: #FFF;
     margin-top: 100px;
     font-weight: 100;
     font-family: 'Roboto', sans-serif;
@@ -34,6 +37,7 @@ body
     flex-wrap: wrap;
     justify-content: center;
     margin: auto;
+    
 }
 
 .container .card
@@ -45,6 +49,7 @@ body
     overflow: hidden;
     margin: 20px;
     transition: all 0.25s;
+    background: #FFF;
 }
 .container .card:hover
 {
