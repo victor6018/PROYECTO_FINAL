@@ -6,7 +6,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>MI PERFIL</title>
+    <link rel="stylesheet" href="css/estiloperfil.css">
 </head>
 <body>
    <?php
@@ -22,7 +23,7 @@
        </div>
         <div class="etiqueta">
        <?php
-                    echo $datos['nombres'];
+            echo $datos['nombres'];
         ?>
        </div>
        <div id="item3">
@@ -31,11 +32,10 @@
            </a>
        </div>
    </header>
-
-    <h1 class="title">MI PERFIL</h1>
+    <h1 class="title">Mi Perfil</h1>
     <div class="container">
         <div class="card">
-            <img src="img/img1.jpg">
+        <img src="img/img1.jpg">
             <p>Nombres: <span><?php echo $datos['nombres'];?></span></p>
             <p>Apellidos: <span><?php echo $datos['ap_paterno']." ".$datos['ap_materno'];?></span></p>
             <p>Genero: <span><?php echo $datos['sexo']?></span></p>
@@ -48,7 +48,6 @@
             <p>Codigo carrera: <span><?php echo $datos['carrera_alumno'] ?></span></p>
             <a href="#">Editar Perfil</a>
         </div>
-
     </div>
 </body>
 </html>
