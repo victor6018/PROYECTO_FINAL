@@ -11,13 +11,11 @@
     <p>Este sistema está a su disposición, esperamos que le permita accdeder de manera rápida y eficiente a la informacion que busca.</p>
     </div>
     <div>
-        <div><a href="index.php">Inicio</a></div>
-        <div><a href="">Ver mi perfil </a></div>
+        <div><a href="perfil.php">Ver mi perfil </a></div>
         <div><a href="">Reportes</a></div>
         <div><a href="">Ver mis cursos</a></div>
         <div><a href="">Matrícula</a></div>
         <div><a href="">Horario</a></div>
-        <div><a href="">Cerrar sesión</a></div>
         
     </div>
 
