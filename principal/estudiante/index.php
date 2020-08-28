@@ -1,3 +1,27 @@
+<?php
+    require '../database.php';
+    include_once('funciones.php');
+    session_start();
+    if($_SESSION['tipo_usuario'] != "estudiantes"){
+        header('location:../../index.php');
+    }
+
+    function get_data($id)
+    {
+        global $conexion;
+        $sql="Select * from estudiantes WHERE codigoe = {$id}";
+        $result  =$conexion->query($sql);
+
+        if( $result->num_rows)
+        {
+            return $result->fetch_assoc();
+
+        }else{
+            return false; 
+
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +31,15 @@
     <link rel="stylesheet" href="css/estiloinicio.css">
 </head>
 <body>
-    
+<?php
+    $datos = get_data($_SESSION['codigo_usuario']);
+    $sufijo = generar_sufijo($datos['sexo']);
+    $cons = "select * from instituto where codigo = ";
+?>
     <div class="container">
         <div class="containerP">
-            <p>Bienvenido a nuestro sistema de gestion academica, en el que se incluye su información académica.</p>
+            <p>Bienvenid<?php echo $sufijo;
+            echo " ".$datos['nombres'];?> a nuestro sistema de gestion academica, en el que se incluye su información académica.</p>
             <p>Este sistema está a su disposición, esperamos que le permita accdeder de manera rápida y eficiente a la informacion que busca.</p>
         </div>
         <div class="card">
@@ -18,7 +47,7 @@
                 <h2>Perfil</h2>
             </div>
             <div class="content">
-                <p>Ver,cambiar y 
+                <p>Ver, cambiar y 
                     administrar tu 
                     perfil</p>
                 <a href="perfil.php">entrar</a>
@@ -29,9 +58,8 @@
                 <h2>Reportes</h2>
             </div>
             <div class="content">
-                <p>Ver,cambiar y 
-                    administrar tu 
-                    perfil</p>
+                <p>Visuaizar, generar y administrar 
+                    reportes</p>
                 <a href="perfil.php">entrar</a>
             </div>
         </div>
@@ -40,9 +68,9 @@
                 <h2>Cursos</h2>
             </div>
             <div class="content">
-                <p>Ver,cambiar y 
-                    administrar tu 
-                    perfil</p>
+                <p>Ver, cambiar y 
+                    administrar tus
+                    cursos</p>
                 <a href="perfil.php">entrar</a>
             </div>
         </div>
@@ -51,9 +79,8 @@
                 <h2>Matricula</h2>
             </div>
             <div class="content">
-                <p>Ver,cambiar y 
-                    administrar tu 
-                    perfil</p>
+                <p>Visuaizar el estado 
+                    de tu matricula</p>
                 <a href="perfil.php">entrar</a>
             </div>
         </div>
@@ -62,14 +89,11 @@
                 <h2>Horario</h2>
             </div>
             <div class="content">
-                <p>Ver,cambiar y 
-                    administrar tu 
-                    perfil</p>
+                <p>Visuaizar el horario
+                    de tus cursos favoritos</p>
                 <a href="perfil.php">entrar</a>
             </div>
         </div>
     </div>
-
-    
 </body>
 </html>

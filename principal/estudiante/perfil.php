@@ -1,5 +1,26 @@
 <?php
-    require_once('cabecera.php');
+    require '../database.php';
+    include_once('funciones.php');
+    session_start();
+    if($_SESSION['tipo_usuario'] != "estudiantes"){
+        header('location:../../index.php');
+    }
+
+    function get_data($id)
+    {
+        global $conexion;
+        $sql="Select * from estudiantes WHERE codigoe = {$id}";
+        $result  =$conexion->query($sql);
+
+        if( $result->num_rows)
+        {
+            return $result->fetch_assoc();
+
+        }else{
+            return false; 
+
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,17 +57,17 @@
     <div class="container">
         <div class="card">
         <img src="img/img1.jpg">
-            <p>Nombres: <span><?php echo $datos['nombres'];?></span></p>
-            <p>Apellidos: <span><?php echo $datos['ap_paterno']." ".$datos['ap_materno'];?></span></p>
-            <p>Genero: <span><?php echo $datos['sexo']?></span></p>
-            <p>Fecha de nacimiento: <span><?php echo $datos['fecha_nacimiento']?></span></p>
-            <p>Correo:  <span><?php echo $datos['correo']?></span></p>
-            <p>Teléfono: <span><?php echo $datos['telefono']?></span></p>
-            <p>Ingresó: <span><?php echo $datos['semestre_ingreso']?></span></p>
-            <p>Dirección: <span><?php echo $datos['dirección']?></span></p>
-            <p>Colegio: <span><?php echo $datos['colegio']. " - ". $datos['tipo_colegio'] ?></span></p>
-            <p>Codigo carrera: <span><?php echo $datos['carrera_alumno'] ?></span></p>
-            <a href="#">Editar Perfil</a>
+            <p><b>Nombres: </b><span><?php echo $datos['nombres'];?></span></p>
+            <p><b>Apellidos: </b><span><?php echo $datos['ap_paterno']." ".$datos['ap_materno'];?></span></p>
+            <p><b>Genero: </b><span><?php echo $datos['sexo']?></span></p>
+            <p><b>Fecha de nacimiento: </b><span><?php echo $datos['fecha_nacimiento']?></span></p>
+            <p><b>Correo:  </b><span><?php echo $datos['correo']?></span></p>
+            <p><b>Teléfono: </b><span><?php echo $datos['telefono']?></span></p>
+            <p><b>Ingresó: </b><span><?php echo $datos['semestre_ingreso']?></span></p>
+            <p><b>Dirección: </b><span><?php echo $datos['dirección']?></span></p>
+            <p><b>Colegio: </b><span><?php echo $datos['colegio']. " - ". $datos['tipo_colegio'] ?></span></p>
+            <p><b>Codigo carrera: </b><span><?php echo $datos['carrera_alumno'] ?></span></p>
+            <a href="#"><b>Editar Perfil</b></a>
         </div>
     </div>
 </body>
