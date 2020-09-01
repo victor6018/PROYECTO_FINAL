@@ -37,6 +37,7 @@
     $cons = "select * from instituto where codigo = ";
 ?>
     <div class="container">
+        <h1>Bienvenido al instituto</h1>
         <div class="containerP">
             <p>Bienvenid<?php echo $sufijo;
             echo " ".$datos['nombres'];?> a nuestro sistema de gestion academica, en el que se incluye su información académica.</p>
@@ -60,7 +61,7 @@
             <div class="content">
                 <p>Visuaizar, generar y administrar 
                     reportes</p>
-                <a href="perfil.php">entrar</a>
+                <a href="reporte.php">entrar</a>
             </div>
         </div>
         <div class="card">

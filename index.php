@@ -10,6 +10,7 @@ require("principal/database.php");
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
     <title>LOGIN</title> 
     <link rel="stylesheet" href="estilologin.css">
+
 </head>
 <body>
     <div class="container">
@@ -49,6 +50,6 @@ require("principal/database.php");
             </div>
         </div>
     </div>
-    <script src="app.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
