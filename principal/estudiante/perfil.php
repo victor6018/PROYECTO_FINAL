@@ -66,8 +66,8 @@
             <p><b>Ingresó: </b><span><?php echo $datos['semestre_ingreso']?></span></p>
             <p><b>Dirección: </b><span><?php echo $datos['dirección']?></span></p>
             <p><b>Colegio: </b><span><?php echo $datos['colegio']. " - ". $datos['tipo_colegio'] ?></span></p>
-            <p><b>Codigo carrera: </b><span><?php echo $datos['carrera_alumno'] ?></span></p>
-            <a href="#"><b>Editar Perfil</b></a>
+            <p><b>Carrera: </b><span><?php echo $datos['carrera_alumno'] ?></span></p>
+            <a href="editar_perfil.php"><b>Editar Perfil</b></a>
         </div>
     </div>
 </body>

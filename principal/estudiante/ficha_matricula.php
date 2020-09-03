@@ -66,8 +66,67 @@
             <?php
             echo "Usuario:".$_SESSION['codigo_usuario'];
             ?>
-            <input type="button" name="imprimi" value="print" onclick="window.print();return false">
+            <input type="button" name="imprimir" value="print" onclick="window.print();return false">
+            <br>Semestre: <span><?php echo $ciclo_Actual['ciclo_actual'];?></span>
         </div>
+    </div>
+    <div>
+        <div>
+            FICHA MATRICULA
+        </div>
+        <div>
+        Carrera: Contabilidad
+        </div>
+        <div>
+            <?php
+            echo "Codigo:".$datos['codigoe'];
+            ?>
+        </div>
+        <div>
+            nombre :
+            <?php
+            echo $datos['nombres']." ". $datos['ap_paterno']." ". $datos['ap_materno'];
+            ?>
+            fecha :
+            <?php
+            echo date("d/m/y");
+            ?>
+        </div>
+    </div>
+    <div>
+        <div id="codigo_curso">Cod. curso</div>
+        <div id="sec_curso">Sec.</div>
+        <div id="nombre_curso">Nombre del curso</div>
+        <div id="ciclo_curso">Ciclo</div>
+        <div id="creditos_curso">Cred.</div>
+        <div id="Vez_curso">Vez</div>
+    </div>
+    <div>
+        <?php
+        while($usuario = $result->fetch_assoc())
+        {
+        ?>
+        <div id="codigo_curso"><?php echo $usuario['id_curso'] ?></div>
+        <div id="sec_curso">A</div>
+        <div id="nombre_curso"><?php echo $usuario['Nombre_curso'] ?></div>
+        <div id="ciclo_curso"><?php echo $usuario['ciclo_curso'] ?></div>
+        <div id="creditos_curso"><?php echo $usuario['creditos']."<br>"?></div>
+        <div id="Vez_curso">1</div>
+    </div>
+    <?php
+        }
+    ?>
+    <div>
+        total de creditos matriculados
+        <?php
+         $creditos = 23;
+         echo $creditos;
+        ?>
+    </div>
+    <div>
+    <pre>Este documento carece de valor sin la firma del responsable académico.</pre>
+        <div id="firmaestudiante">Firma Estudiante</div>
+        <div id="firmaestudiante">Firma responsable</div>
     </div>
 </body>
 </html>
