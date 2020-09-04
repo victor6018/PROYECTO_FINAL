@@ -72,7 +72,7 @@
                 <p>Ver, cambiar y 
                     administrar tus
                     cursos</p>
-                <a href="perfil.php">entrar</a>
+                <a href="cursos.php">entrar</a>
             </div>
         </div>
         <div class="card">
@@ -82,7 +82,7 @@
             <div class="content">
                 <p>Visuaizar el estado 
                     de tu matricula</p>
-                <a href="perfil.php">entrar</a>
+                <a href="matricula.php">entrar</a>
             </div>
         </div>
         <div class="card">
@@ -92,7 +92,7 @@
             <div class="content">
                 <p>Visuaizar el horario
                     de tus cursos favoritos</p>
-                <a href="perfil.php">entrar</a>
+                <a href="horarios.php">entrar</a>
             </div>
         </div>
     </div>

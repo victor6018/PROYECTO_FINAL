@@ -42,15 +42,16 @@
 
     $result='';
     error_reporting(0);
-    function rum_query ($id,$periodo)
+    function rum_query ()
     {
         global $conexion;
-        $sql="Select * from matricula INNER JOIN curso ON matricula.curso_id_curso=curso.id_curso WHERE estudiantes_id_estudiante='{$id}' and periodo='{$periodo}';";
+        $sql="Select * from curso";
         return $conexion->query($sql);  
     }
 
-    $result = rum_query($datos['id_estudiante'],$ciclo_actual['ciclo_actual']);
+    $result = rum_query();
 
     ?>
+    
 </body>
 </html>
