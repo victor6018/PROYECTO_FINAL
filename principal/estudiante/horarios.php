@@ -64,11 +64,6 @@
     <title></title>
 </head>
 <body>
-    <section id="datos_item2">
-            <p>Nombres: <span><?php echo $datos['nombres'];?></span></p>
-            <p>Apellidos: <span><?php echo $datos['ap_paterno']." ".$datos['ap_materno'];?></span></p>
-            <p>Fecha de nacimiento: <span><?php echo $datos['fecha_nacimiento']?></span></p>
-            <p>Codigo carrera: <span><?php echo $datos['carrera_alumno'] ?></span></p>
-    </section>
+    hola mundo
 </body>
 </html>

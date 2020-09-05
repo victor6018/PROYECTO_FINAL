@@ -27,8 +27,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
     <title>Inicio</title>
-    <link rel="stylesheet" href="css/estiloinicio.css">
+    <link rel="stylesheet" href="css/estiloprincipal.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../../materialize/css/materialize.min.css">
 </head>
 <body>
 <?php
@@ -36,6 +39,25 @@
     $sufijo = generar_sufijo($datos['sexo']);
     $cons = "select * from instituto where codigo = ";
 ?>
+   <nav class="nav-extended blue">
+    <div class="nav-wrapper">
+      <a class="brand-logo">
+        <p>Bienvenido al 
+          Instituto</p>
+      </a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="">sobre nosotros</a></li>
+        <li><a href="">contactanos</a></li>
+        <li><a href="">cerrar secion</a></li>
+      </ul>
+    </div>
+    <div class="nav-content">
+      <span class="nav-title"><p></p></span>
+      <a href="index.php" class="btn-floating red btn-large halfway-fab ">
+        <i class="material-icons">home</i>
+      </a>
+    </div>
+  </nav>
     <div class="container">
         <h1>Bienvenido al instituto</h1>
         <div class="containerP">

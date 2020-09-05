@@ -41,7 +41,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/a81368914c.js"></script>
     <title>Cursos</title>
-    <link rel="stylesheet" href="css/estilocurso.css">
+    <link rel="stylesheet" href="">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../../materialize/css/materialize.min.css">
 
@@ -87,10 +87,10 @@
             <div class="content">
                 <div class="left">
                     <div class="about-container">
-                        <p class="text"><b>Correo:  </b><span><?php echo $datos['correo']?></span></p>
                         <p class="text"><b>Ingresó: </b><span><?php echo $datos['semestre_ingreso']?></span></p>
                         <p class="text"><b>Colegio: </b><span><?php echo $datos['colegio']. " - ". $datos['tipo_colegio'] ?></span></p>
                         <p class="text"><b>Carrera: </b><span><?php echo $datos['carrera_alumno'] ?></span></p>
+                        <p class="text"><b>Semestre: </b><span><?php echo $ciclo_Actual['ciclo_actual'];?></span></p>
                     </div>
                 </div>
             </div>
