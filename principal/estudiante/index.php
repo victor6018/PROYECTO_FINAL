@@ -27,7 +27,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
     <title>Inicio</title>
     <link rel="stylesheet" href="css/estiloprincipal.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">

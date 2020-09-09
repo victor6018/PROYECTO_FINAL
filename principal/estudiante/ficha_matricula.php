@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ficha de matricula</title>
-</head>
-<body>
     <?php
 
         require '../database.php';
         include_once('funciones.php');
+        
 
         function get_ciclo()
         {
@@ -51,82 +44,93 @@
         }
         $result = run_query($datos['id_estudiante'],$ciclo_Actual['ciclo_actual']);
     ?>
-    <div>
-        <div>
-            INSTITUTO
-            ANDAHUAYLAS
-        </div>
-        <div>
-            fecha :
-            <?php
-            echo date("d/m/y");
-            ?>
-        </div>
-        <div>
-            <?php
-            echo "Usuario:".$_SESSION['codigo_usuario'];
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ficha de matricula</title>
+    <link rel="stylesheet" type="text/css" href="css/estilo4.css">
+</head>
+<body>
+    <div id="contenedor_ficha_matricula">
+        <header id="titulo_matricula">
+            <div id="nombre_instituto"><strong>Istituto</strong>
+            <br>
+            Andahuaylas</div>
+            <div id="fecha">Fecha:<?php
+                echo date("d/m/y");
+            ?></div>
+            <div id="codigo_usuario"><?php
+            echo "Usuario: ".$_SESSION['codigo_usuario'];
             ?>
             <input type="button" name="imprimir" value="print" onclick="window.print();return false">
             <br>Semestre: <span><?php echo $ciclo_Actual['ciclo_actual'];?></span>
-        </div>
-    </div>
-    <div>
-        <div>
-            FICHA MATRICULA
-        </div>
-        <div>
-        Carrera: Contabilidad
-        </div>
-        <div>
+            </div>
+        </header>
+        <section id="titulo_ficha_matricula">FICHA DE MATRICULA </section>
+        <header id="titulo_matricula">
+            <div id="nombre_instituto"><strong>Carrera:</strong>contabilidad
+            <br>
+            <br>
             <?php
-            echo "Codigo:".$datos['codigoe'];
+            echo "<strong>Codigo: </strong>".$_SESSION['codigo_usuario'];
             ?>
-        </div>
-        <div>
-            nombre :
-            <?php
-            echo $datos['nombres']." ". $datos['ap_paterno']." ". $datos['ap_materno'];
+            </div>
+            <div id="fecha"></div>
+            <div id="codigo_usuario">
+            Nombre: <span><?php echo $datos['nombres']." ". $datos['ap_paterno']." ". $datos['ap_materno'];?>
+            </span>
+            <br>
+            <br>
+            <strong>Fecha:</strong><?php
+                echo date("d/m/y");
+                $creditos = 23;
             ?>
-            fecha :
-            <?php
-            echo date("d/m/y");
-            ?>
-        </div>
-    </div>
-    <div>
-        <div id="codigo_curso">Cod. curso</div>
-        <div id="sec_curso">Sec.</div>
-        <div id="nombre_curso">Nombre del curso</div>
-        <div id="ciclo_curso">Ciclo</div>
-        <div id="creditos_curso">Cred.</div>
-        <div id="Vez_curso">Vez</div>
-    </div>
-    <div>
+            </div>
+        </header>
+            <hr>
+        <section id="curso_title">
+
+            <div id="codigo_curso">Cod. curso</div>
+            <div id="sec_curso">Sec.</div>
+            <div id="nombre_curso">Nombre del curso</div>
+            <div id="ciclo_curso">Ciclo</div>
+            <div id="creditos_curso">Cred.</div>
+            <div id="Vez_curso">Vez</div>
+        </section>
+        <hr>
+        
         <?php
-        while($usuario = $result->fetch_assoc())
-        {
-        ?>
-        <div id="codigo_curso"><?php echo $usuario['id_curso'] ?></div>
-        <div id="sec_curso">A</div>
-        <div id="nombre_curso"><?php echo $usuario['Nombre_curso'] ?></div>
-        <div id="ciclo_curso"><?php echo $usuario['ciclo_curso'] ?></div>
-        <div id="creditos_curso"><?php echo $usuario['creditos']."<br>"?></div>
-        <div id="Vez_curso">1</div>
-    </div>
+                while($usuario = $result->fetch_assoc()){
+                ?>
+                
+        <section id="curso_title">
+
+            <div id="codigo_curso"><?php echo $usuario['id_curso'] ?></div>
+            <div id="sec_curso">A</div>
+            <div id="nombre_curso"><?php echo $usuario['Nombre_curso'] ?></div>
+            <div id="ciclo_curso"><?php echo $usuario['ciclo_curso'] ?></div>
+            <div id="creditos_curso"><?php echo $usuario['creditos']."<br>"?></div>
+            <div id="Vez_curso">1</div>
+        </section>
+        
     <?php
-        }
-    ?>
-    <div>
-        total de creditos matriculados
-        <?php
-         $creditos = 23;
-         echo $creditos;
+                }
         ?>
-    </div>
-    <div>
-    <pre>Este documento carece de valor sin la firma del responsable académico.</pre>
-        <div id="firmaestudiante">Firma Estudiante</div>
-        <div id="firmaestudiante">Firma responsable</div>
+        <hr>
+        total creditos matriculados <?php
+            echo $creditos;
+        ?>
+        <br>
+        <pre>Este documento carece de valor sin la firma del responsable académico.</pre>
+        
+        <div id="contenedor_firma">
+            <div id="firmaestudiante">Firma Estudiante</div>
+            <div id="firmaestudiante">Firma responsable</div>
+        </div>
+        
+        
     </div>
 </body>
 </html>
