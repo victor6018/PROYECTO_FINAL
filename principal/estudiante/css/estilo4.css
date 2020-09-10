@@ -1,0 +1,127 @@
+/*********************reporte matricula********************/
+
+
+#titulo_matricula {
+    display: flex;
+    width: 100%;
+}
+
+#contenedor_ficha_matricula {
+    width: 700px;
+    border: solid 1px black;
+    min-height: 200px;
+    height: auto;
+    margin: 15px auto;
+}
+
+#nombre_instituto {
+    width: 40%;
+}
+
+#fecha {
+    width: 20%;
+}
+
+#titulo_ficha_matricula {
+    text-align: center;
+    font-size: 1.1em;
+    width: 100%;
+    padding: 5px;
+    font-family: arial;
+    font-weight: bold;
+}
+
+#curso_title {
+    display: flex;
+}
+
+#codigo_curso {
+    width: 15%;
+    border-left: solid 1px black;
+    box-sizing: border-box;
+}
+
+#sec_curso {
+    width: 10%;
+    border-left: solid 1px black;
+    box-sizing: border-box;
+
+}
+
+#nombre_curso {
+    width: 45%;
+        border-left: solid 1px black;
+    box-sizing: border-box;
+
+}
+
+#ciclo_curso {
+    width: 7%;
+        border-left: solid 1px black;
+    box-sizing: border-box;
+
+}
+
+#creditos_curso {
+    width: 7%;
+        border-left: solid 1px black;
+    box-sizing: border-box;
+
+}
+
+#Vez_curso {
+   width: 7%; 
+    border-left: solid 1px black;
+    box-sizing: border-box;
+
+}
+
+#contenedor_firma {
+    display: flex;
+    padding-top: 30px;
+    padding-left: 80px;
+    padding-right: 80px;
+    box-sizing: border-box;
+    
+}
+
+#firmaestudiante {
+    width: 50%;
+    text-align: center;    
+    margin-left: 20px;
+    height: 5px;
+    border-top-style: dashed;
+    border-top: solid 1px black;
+}
+
+#final_curso {
+    width: 7%; 
+    border-left: solid 1px black;
+    box-sizing: border-box;
+
+}
+
+#cabecera_matricula {
+    width: 100%;
+    height: 20px;
+    background: red;
+}
+
+#boton_desaparecer{
+    display: none;
+}
+
+
+#dia {
+    width: 20%;
+    border-left: solid 1px black;
+    box-sizing: border-box;
+    background: black;        
+}
+
+#hora_curso {
+    width: 15%;
+    border-left: solid 1px black;
+    box-sizing: border-box;
+
+}

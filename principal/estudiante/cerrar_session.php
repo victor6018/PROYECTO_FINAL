@@ -1,0 +1,16 @@
+<?php
+    session_start();
+    if($_SESSION['codigo_usuario'])
+    {
+        if($_REQUEST['cod']==1)
+        {
+            session_destroy();
+            header('location:../../index.php');
+        }else{
+            session_destroy();
+            header('location:../../index.php');
+        }    
+    }else{
+        header('location:../../index.php');
+    }
+?>
