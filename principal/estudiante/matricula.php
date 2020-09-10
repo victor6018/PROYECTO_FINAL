@@ -40,10 +40,10 @@
             return false;
         }
     }
-    function matriculado($cod_curso, $id, $periodo)
+    function matriculado($cod_curso, $id)
     {
         global $conexion;
-        $sql="SELECT * FROM matricula WHERE curso_id_curso = '{$cod_curso}' and estudiantes_id_estudiante ='{$id}' and periodo ='$periodo';";
+        $sql="SELECT * FROM matricula WHERE curso_id_curso = '{$cod_curso}' and estudiantes_id_estudiante ='{$id}';";
         $result=$conexion->query($sql);
         if( $result->num_rows)
         {
@@ -66,10 +66,10 @@
         return $conexion->query($sql);  
     }
 
-    function matriculados($id, $periodo)
+    function matriculados($id)
     {
         global $conexion ;
-        $sql = "SELECT * FROM matricula INNER JOIN curso ON matricula.curso_id_curso = curso.id_curso WHERE estudiantes_id_estudiante= '{$id}' and periodo='{$periodo}';";
+        $sql = "SELECT * FROM matricula INNER JOIN curso ON matricula.curso_id_curso = curso.id_curso WHERE estudiantes_id_estudiante= '{$id}'";
         return $conexion->query($sql);
     }
 
@@ -96,7 +96,7 @@
       <ul class="right hide-on-med-and-down">
         <li><a href="">sobre nosotros</a></li>
         <li><a href="">contactanos</a></li>
-        <li><a href="">cerrar secion</a></li>
+        <li><a href="cerrar_session.php">cerrar secion</a></li>
       </ul>
     </div>
     <div class="nav-content">
@@ -131,6 +131,73 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="container">
+        <p><h3>Matriculados</h3></p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Cod</th>
+                    <th>Creditos</th>
+                    <th>Nombre del curso</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                    $result2 = matriculados($datos['id_estudiante'],$ciclo_Actual['ciclo_actual']);
+                    while($usuario2 = $result2->fetch_assoc())
+                    {
+                ?>
+                <tr>
+                    <td><?php echo $usuario2['id_curso']?> </td>
+                    <td><?php echo $usuario2['creditos']?></td>
+                    <td><?php echo $usuario2['Nombre_curso']?></td>
+                </tr>
+                <?php
+                    }
+                ?>
+            </tbody>
+        </table>
+    </div>
+    <div class="container">
+    <p><h3>Por Matricular</h3></p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Cod</th>
+                    <th>Creditos</th>
+                    <th>Nombre del curso</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                    $cont=0;
+                    while($usuario = $result->fetch_assoc())
+                    {
+                        $cont+=1;
+                ?>
+                <tr>
+                    <td><?php echo $usuario['id_curso'] ?></td>
+                    <td><?php echo $usuario['creditos'] ?></td>
+                    <td><?php echo $usuario['Nombre_curso'] ?></td>
+                    <td>
+                        <?php
+                            if(matriculado($usuario['id_curso'],$datos['id_estudiante'],$ciclo_Actual['ciclo_actual']))
+                                {
+                                    echo "Ya Estas Maltriculado";  
+                                }else{
+                                    echo "Por Matricular";
+                                }
+                            
+                        ?>
+                    </td>
+                </tr>
+                <?php
+                    }
+                ?>
+            </tbody>
+        </table>
     </div>
 </body>
 </html>

@@ -70,7 +70,7 @@
         </header>
         <section id="titulo_ficha_matricula">Constancia de Notas </section>
         <header id="titulo_matricula">
-            <div id="nombre_instituto"><strong>Carrera:</strong>Administración de empresas turísticas y hoteleras
+            <div id="nombre_instituto"><strong>Carrera:</strong>contabilidad
             <br>
             <br>
             <?php

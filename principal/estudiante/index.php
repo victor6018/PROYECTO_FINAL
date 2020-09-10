@@ -47,7 +47,7 @@
       <ul class="right hide-on-med-and-down">
         <li><a href="">sobre nosotros</a></li>
         <li><a href="">contactanos</a></li>
-        <li><a href="">cerrar secion</a></li>
+        <li><a href="cerrar_session.php">cerrar secion</a></li>
       </ul>
     </div>
     <div class="nav-content">
